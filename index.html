@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Countdown Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        
+        <div id="current-item-name">โปรแกรมรอบนมัสการ</div>
+
+        <div id="timer-display">00:00</div>
+
+        <p id="message" style="display:block;">ป้อนรายการและกด 'กำหนดเวลาและเริ่ม'</p>
+
+        <div class="controls">
+            
+            <div class="input-area">
+                <label for="next-item-name">ชื่อรายการ:</label>
+                <input type="text" id="next-item-name" value="อธิษฐาน" placeholder="รายการถัดไป">
+                
+                <label for="next-item-duration">เวลา (นาที):</label>
+                <input type="number" id="next-item-duration" value="5" min="1" style="width: 60px;">
+            </div>
+            
+            <div class="button-area">
+                <button id="set-and-start-button">กำหนดเวลาและเริ่ม</button> 
+                
+                <button id="stop-button" style="background-color: #ff6347;">หยุดชั่วคราว</button> 
+                
+                <button id="reset-button">รีเซ็ต</button>
+            </div>
+            
+            <p class="note">**หมายเหตุ:** ส่วนนี้ใช้สำหรับควบคุมเท่านั้น และจะใช้งานบนหน้าจอของผู้ควบคุม</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

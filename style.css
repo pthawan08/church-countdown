@@ -1,0 +1,96 @@
+body {
+    background-color: #000000; /* พื้นหลังดำสนิท */
+    color: #FFFFFF; /* ตัวอักษรขาวสนิท */
+    font-family: 'Tahoma', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+}
+
+.container {
+    text-align: center;
+    width: 90%;
+    max-width: 1200px;
+}
+
+/* ชื่อรายการปัจจุบันที่อยู่บนสุด */
+#current-item-name {
+    font-size: 60px; 
+    font-weight: 500;
+    color: #FFFFFF; /* ขาว */
+    margin-bottom: 50px;
+    padding: 10px 20px;
+    background-color: #111111; /* ดำเข้มเล็กน้อยเพื่อแบ่งส่วน (ไม่ส่งผลต่อจอโปรเจคเตอร์) */
+    border-radius: 10px;
+}
+
+/* ตัวนับเวลาหลัก */
+#timer-display {
+    font-size: 350px; /* ใหญ่มาก */
+    font-weight: bold;
+    letter-spacing: 15px;
+    margin: 20px 0;
+    transition: color 0.5s;
+    color: #FFFFFF; /* ขาว */
+}
+
+#message {
+    font-size: 36px;
+    font-weight: bold;
+    color: #FFFFFF; /* ขาว (เปลี่ยนเป็นแดงเมื่อหมดเวลา) */
+    margin-bottom: 20px;
+}
+
+/* ------------------------------------------- */
+/* ส่วนควบคุม (สำหรับผู้ควบคุมเท่านั้น) */
+/* ------------------------------------------- */
+.controls {
+    margin-top: 50px;
+    padding: 20px;
+    border: 1px solid #333333;
+    border-radius: 10px;
+    background-color: #111111; /* ดำเข้มเล็กน้อย */
+    color: #FFFFFF; /* ตัวอักษรขาว */
+}
+
+.input-area label {
+    margin-right: 10px;
+}
+
+.input-area input {
+    padding: 5px;
+    margin-right: 20px;
+    border: 1px solid #666;
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+.controls button {
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 0 10px;
+    background-color: #38b2ac;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+/* ------------------------------------------- */
+/* CSS Animation สำหรับโหมด Overtime (สีแดงกระพริบยังคงอยู่) */
+/* ------------------------------------------- */
+
+@keyframes blink-red {
+    0% { opacity: 1; text-shadow: 0 0 10px rgba(255, 0, 0, 0.7); }
+    50% { opacity: 0.8; text-shadow: none; }
+    100% { opacity: 1; text-shadow: 0 0 10px rgba(255, 0, 0, 0.7); }
+}
+
+/* คลาสสำหรับใช้เมื่อเข้าสู่โหมด Overtime */
+.overtime-blink {
+    color: red !important; /* บังคับให้เป็นสีแดง */
+    animation: blink-red 1s step-start infinite; /* ใช้ Animation กระพริบ 1 วินาที */
+}
